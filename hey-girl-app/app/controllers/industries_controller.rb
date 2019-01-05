@@ -5,12 +5,12 @@ class IndustriesController < ApplicationController
   def index
     @industries = Industry.all
 
-    render json: @industries
+    render json: @industries, include: [:events, :posts]
   end
 
   # GET /industries/1
   def show
-    render json: @industry
+    render json: @industry, include: [:events, :posts]
   end
 
   # POST /industries
