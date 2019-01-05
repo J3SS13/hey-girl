@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 2019_01_04_222148) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.date "date"
     t.string "location"
-    t.time "time"
+    t.string "date"
+    t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "industry_id"
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 2019_01_04_222148) do
 
   create_table "posts", force: :cascade do |t|
     t.string "topic"
-    t.date "date"
     t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
