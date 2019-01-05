@@ -15,9 +15,9 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
+    @industry = Industry.find(params[:industry_id])
     @event = Event.new(event_params)
-
-    if @event.save
+    if @industry.events << @event
       render json: @event, status: :created, location: @event
     else
       render json: @event.errors, status: :unprocessable_entity

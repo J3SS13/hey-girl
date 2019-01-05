@@ -15,9 +15,10 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
+    @industry = Industry.find(params[:industry_id])
     @post = Post.new(post_params)
 
-    if @post.save
+    if @industry.posts << @posts
       render json: @post, status: :created, location: @post
     else
       render json: @post.errors, status: :unprocessable_entity
