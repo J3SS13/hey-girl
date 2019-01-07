@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { getIndustries } from './components/services/industries';
+import { getPosts, addPosts } from './components/services/posts';
 import Engineering from './components/Industries/Engineering/Engineering';
 import Entertainment from './components/Industries/Entertainment/Entertainment';
 import Science from './components/Industries/Science/Science';
@@ -14,20 +15,34 @@ class App extends Component {
   constructor(props){
       super(props);
     this.state = {
-      apiData :[]
+      industries: [],
+      posts: []
     }
   }
 
-  async componentDidMount(){
-    try {
-      const posts = await getIndustries();
-      this.setState({posts});
-    } catch(e){
-      console.log(e);
-    }
+async componentDidMount(){
+  const industries = await getIndustries();
+  this.setState({industries});
+
+  const posts = await getPosts(4);
+  console.log(posts);
+
+  const newData = { }
+
+  addPost(4,)
 
   }
 
+
+
+// async setPosts(industryId){
+//   const posts = await getPosts(industryId);
+//   this.setState({posts});
+// }
+
+// setIndustries(){
+//
+// }
 
 
   render() {
