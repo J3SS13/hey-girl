@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { getIndustries } from './components/services/industries';
-import { getPosts, addPosts } from './components/services/posts';
+import { getPosts, addPost } from './components/services/posts';
 import Engineering from './components/Industries/Engineering/Engineering';
 import Entertainment from './components/Industries/Entertainment/Entertainment';
 import Science from './components/Industries/Science/Science';
@@ -25,11 +25,13 @@ async componentDidMount(){
   this.setState({industries});
 
   const posts = await getPosts(4);
-  console.log(posts);
 
-  const newData = { }
+  const data = {
+      topic : 'The only way to network with my male coworkers is to attend happy hours in an unsafe part of town.',
+  		user_name : "heather1"
+    }
 
-  addPost(4,)
+  await addPost(4, data);
 
   }
 
