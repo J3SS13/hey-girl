@@ -8,25 +8,24 @@ async function getPosts(industryId){
   return resp.data;
 }
 
+//Add post by Industry
 async function addPost(industryId, data){
-
   const resp = await axios.post(`/industries/${industryId}/posts`, data);
 }
 
+// Update post by Industry
 async function updatePost(industryId, postId, data){
-  const resp = await axios.put({
-    url: `/industries/${industryId}/posts/${postId}`,
-    body: data
-    });
+  const resp = await axios.put(`/industries/${industryId}/posts/${postId}`,
+    data
+    );
   console.log(resp);
   return resp.data;
 }
 
+//Delete post by Industry
 async function deletePost(industryId, postId){
-  const resp = await axios({
-    url: `/industries/${industryId}/posts/${postId}`
-  });
+  const resp = await axios.delete(`/industries/${industryId}/posts/${postId}`);
   return resp.data;
 }
 
-export { getPosts, addPost }
+export { getPosts, addPost, updatePost, deletePost }

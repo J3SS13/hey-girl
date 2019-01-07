@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { getIndustries } from './components/services/industries';
-import { getPosts, addPost } from './components/services/posts';
+import { getPosts, addPost, updatePost, deletePost } from './components/services/posts';
 import Engineering from './components/Industries/Engineering/Engineering';
 import Entertainment from './components/Industries/Entertainment/Entertainment';
 import Science from './components/Industries/Science/Science';
@@ -27,24 +27,16 @@ async componentDidMount(){
   const posts = await getPosts(4);
 
   const data = {
-      topic : 'The only way to network with my male coworkers is to attend happy hours in an unsafe part of town.',
-  		user_name : "heather1"
+      topic : 'We need more women in leadership!',
+  		user_name : "Ashley"
     }
+  // await addPost(industryId, data);
 
-  await addPost(4, data);
+  // await deletePost(industryId, postId);
 
+  // await updatePost(industryId, postId, data);
   }
 
-
-
-// async setPosts(industryId){
-//   const posts = await getPosts(industryId);
-//   this.setState({posts});
-// }
-
-// setIndustries(){
-//
-// }
 
 
   render() {
