@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { getIndustries } from './components/services/industries';
 import Engineering from './components/Industries/Engineering/Engineering';
 import Entertainment from './components/Industries/Entertainment/Entertainment';
-import Medicine from './components/Industries/Medicine/Medicine';
 import Science from './components/Industries/Science/Science';
 import Tech from './components/Industries/Tech/Tech';
 import Home from './components/Home/Home';
@@ -13,42 +14,34 @@ class App extends Component {
   constructor(props){
       super(props);
     this.state = {
-      view: ''
+      apiData :[]
     }
-this.setView = this.setView.bind(this);
   }
 
+  async componentDidMount(){
+    try {
+      const posts = await getIndustries();
+      this.setState({posts});
+    } catch(e){
+      console.log(e);
+    }
 
-setView(view){
-  console.log("this got fired")
-  this.setState({view:view});
-}
-
-getView(){
-  switch (this.state.view){
-    case 'Engineering':
-      return <Engineering />
-    case 'Science' :
-     return <Science />
-    case 'Technology' :
-      return  <Tech />
-    case 'Entertainment' :
-      return <Entertainment />
-    case 'Home' :
-      return <Home setView={this.setView}/>
-    default :
-      return  <Home setView={this.setView}/>
   }
-}
 
 
 
   render() {
     return (
+    <Router>
       <div className="App">
         <Nav setView={this.setView}/>
-        {this.getView()}
+          <Route exact path="/" component={Home} />
+          <Route path="/eng" component={Engineering}/>
+          <Route path="/science" component={Science} />
+          <Route path="/tech" component={Tech} />
+          <Route path="/ent" component={Entertainment} />
       </div>
+    </Router>
     );
   }
 }

@@ -1,13 +1,16 @@
 import React from 'react';
-import Button from './Button';
+import Links from './Links';
+import { Link } from 'react-router-dom';
+
 export default function Nav(props){
   return(
     <nav>
-      <Button industry={'Home'} setView={props.setView} />
-    <Button industry={'Engineering'} setView={props.setView} />
-    <Button industry={'Science'} setView={props.setView} />
-    <Button industry={'Technology'} setView={props.setView} />
-    <Button industry={'Entertainment'} setView={props.setView} />
+    <ul>
+      <li>
+      <Link to='/'> Home </Link>
+      </li>
+    </ul>
+      <Links />
     </nav>
   )
 }
