@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { getIndustries } from './components/services/industries';
 import { getPosts, addPost, updatePost, deletePost } from './components/services/posts';
+import { getEvents, addEvent, updateEvent, deleteEvent } from './components/services/events';
 import Engineering from './components/Industries/Engineering/Engineering';
 import Entertainment from './components/Industries/Entertainment/Entertainment';
 import Science from './components/Industries/Science/Science';
@@ -24,17 +25,18 @@ async componentDidMount(){
   const industries = await getIndustries();
   this.setState({industries});
 
-  const posts = await getPosts(4);
+  /// ----> move this into: components/Industries/ShareComponents/MessageBoard.js
 
-  const data = {
-      topic : 'We need more women in leadership!',
-  		user_name : "Ashley"
-    }
+  // await getEvents(industryId);
+  // await addEvent(industryId, data);
+  // await deleteEvent(industryId, eventId);
+  // await updateEvent(industryId, eventId, data);
+
+  // await getPosts(industryId);
   // await addPost(industryId, data);
-
   // await deletePost(industryId, postId);
-
   // await updatePost(industryId, postId, data);
+
   }
 
 
