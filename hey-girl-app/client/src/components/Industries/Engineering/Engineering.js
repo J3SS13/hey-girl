@@ -8,7 +8,6 @@ export default function Engineering(){
       <h1> Engineering </h1>
       <Post />
       <EventList industryId={4}/>
-
     </div>
   )
 }

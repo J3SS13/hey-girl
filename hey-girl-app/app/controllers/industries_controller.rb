@@ -1,5 +1,6 @@
 class IndustriesController < ApplicationController
   before_action :set_industry, only: [:show, :update, :destroy]
+  before_action :authenticate_user, only: [:create, :update, :destroy]
 
   # GET /industries
   def index

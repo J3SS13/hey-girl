@@ -12,16 +12,23 @@ class MessageBoard extends Component {
   }
 
 
-async componentDidMount(props){
-  const events = await getEvents(props.industryId);
-  console.log(events);
+async componentDidMount(){
+  const events = await getPosts(this.props.industryId);
+  this.setState({events})
 }
-  // ;
-  // await addEvent(industryId, data);
-  // await deleteEvent(industryId, eventId);
-  // await updateEvent(industryId, eventId, data);
 
 
+//   async deletePost(industryId, data){
+//     await addPost(industryId, data);
+//   }
+//
+//   async updatePost(industryId, eventId, data){
+//     await updatePost(industryId, eventId, data);
+//   }
+//
+//   async deletePost(industryId, eventId){
+//     await deletePost(industryId, eventId);
+//   }
 
 render(){
   return(
