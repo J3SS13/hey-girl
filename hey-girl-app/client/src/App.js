@@ -3,7 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { getIndustries } from './components/services/industries';
 import { getPosts, addPost, updatePost, deletePost } from './components/services/posts';
-import { getEvents, addEvent, updateEvent, deleteEvent } from './components/services/events';
+import { getEvents, addEvent, updateEvent, deleteEvent } from './components/services/events'
+
 import Engineering from './components/Industries/Engineering/Engineering';
 import Entertainment from './components/Industries/Entertainment/Entertainment';
 import Science from './components/Industries/Science/Science';
@@ -24,20 +25,44 @@ class App extends Component {
 async componentDidMount(){
   const industries = await getIndustries();
   this.setState({industries});
-
+}
   /// ----> move this into: components/Industries/ShareComponents/MessageBoard.js
 
-  // await getEvents(industryId);
-  // await addEvent(industryId, data);
-  // await deleteEvent(industryId, eventId);
-  // await updateEvent(industryId, eventId, data);
+// async getIndustries()
+//
+//   async setEvents(industryId){
+//     await getEvents(industryId);
+//   }
+//
+//   async deleteEvent(industryId, data){
+//     await addEvent(industryId, data);
+//   }
+//
+//   async updateEvent(industryId, eventId, data){
+//     await updateEvent(industryId, eventId, data);
+//   }
+//
+//   async deleteEvent(industryId, eventId){
+//     await deleteEvent(industryId, eventId);
+//   }
+//
+//   async getPosts(industryId){
+//     await getPosts(industryId);
+//   }
+//
+//   async deletePost(industryId, data){
+//     await addPost(industryId, data);
+//   }
+//
+//   async updatePost(industryId, eventId, data){
+//     await updatePost(industryId, eventId, data);
+//   }
+//
+//   async deletePost(industryId, eventId){
+//     await deletePost(industryId, eventId);
+//   }
 
-  // await getPosts(industryId);
-  // await addPost(industryId, data);
-  // await deletePost(industryId, postId);
-  // await updatePost(industryId, postId, data);
 
-  }
 
 
 
@@ -45,7 +70,7 @@ async componentDidMount(){
     return (
     <Router>
       <div className="App">
-        <Nav setView={this.setView}/>
+        <Nav />
           <Route exact path="/" component={Home} />
           <Route path="/eng" component={Engineering}/>
           <Route path="/science" component={Science} />
