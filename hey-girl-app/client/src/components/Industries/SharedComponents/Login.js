@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Auth from './Auth';
+import LoginForm from './LoginForm';
+import { login }from '../../../components/services/auth';
 
-class App extends Component {
+class Login extends Component {
 
   constructor(props){
     super(props);
@@ -11,9 +12,11 @@ class App extends Component {
               password: ''
             }
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-///Will need to ...prevState  more.
+
   handleChange(e){
     const {name, value} = e.target
     this.setState(prevState => (
@@ -36,10 +39,12 @@ class App extends Component {
       return(
         <div>
           <h1> Choose Your Industry </h1>
-          <Auth onChange={this.handleChange}  
-                onSubmit={this.handleSubmit}
-                login={this.state.credentials}
+          <LoginForm handleChange={this.handleChange}
+                     handleSubmit={this.handleSubmit}
+                     login={this.state.credentials}
                 />
         </div>
   )}
 }
+
+export default Login;

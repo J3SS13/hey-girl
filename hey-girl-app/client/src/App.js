@@ -26,64 +26,64 @@ class App extends Component {
       userView: '',
       loggedIn: false,
       token: null
+      // ,
+      // credentials: {
+      //         email: '',
+      //         password: ''
+      // }
+
     };
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     }
-  }
+
 
 async componentDidMount(){
   const industries = await getIndustries();
   this.setState({industries});
 }
-  /// ----> move this into: components/Industries/ShareComponents/MessageBoard.js
-
-// async getIndustries()
-//
-//   async setEvents(industryId){
-//     await getEvents(industryId);
-//   }
-//
-//   async deleteEvent(industryId, data){
-//     await addEvent(industryId, data);
-//   }
-//
-//   async updateEvent(industryId, eventId, data){
-//     await updateEvent(industryId, eventId, data);
-//   }
-//
-//   async deleteEvent(industryId, eventId){
-//     await deleteEvent(industryId, eventId);
-//   }
-//
-//   async getPosts(industryId){
-//     await getPosts(industryId);
-//   }
-//
-//   async deletePost(industryId, data){
-//     await addPost(industryId, data);
-//   }
-//
-//   async updatePost(industryId, eventId, data){
-//     await updatePost(industryId, eventId, data);
-//   }
-//
-//   async deletePost(industryId, eventId){
-//     await deletePost(industryId, eventId);
-//   }
 
 
-
+  // handleChange(e){
+  //   const {name, value} = e.target
+  //   this.setState(prevState => (
+  //     {
+  //       credentials: {
+  //         ...prevState.credentials,
+  //         [name] : value
+  //       }
+  //     }
+  //     ))
+  //   }
+  //
+  // async handleSubmit(e){
+  //     e.preventDefault();
+  //     const tokenData = await login(this.state.credentials);
+  //     localStorage.setItem('token', tokenData.jwt);
+  //   }
+  //
 
 
   render() {
     return (
     <Router>
       <div className="App">
-        <Nav />
-          <Route exact path="/" component={Home} />
-          <Route path="/eng" component={Engineering}/>
-          <Route path="/science" component={Science} />
-          <Route path="/tech" component={Tech} />
-          <Route path="/ent" component={Entertainment} />
+          <Nav />
+              <Route
+                exact path="/"
+                component={Home}/>
+              <Route
+                path="/eng"
+                component={Engineering}/>
+              <Route
+                path="/science"
+                component={Science} />
+              <Route
+                path="/tech"
+                component={Tech} />
+              <Route
+                path="/ent"
+                component={Entertainment} />
       </div>
     </Router>
     );

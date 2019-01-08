@@ -1,6 +1,7 @@
 import React from 'react';
 import Links from './Links';
 import { Link } from 'react-router-dom';
+import Login from '../Industries/SharedComponents/Login';
 
 export default function Nav(props){
   return(
@@ -11,6 +12,7 @@ export default function Nav(props){
       </li>
     </ul>
       <Links />
+      <Login />
     </nav>
   )
 }
