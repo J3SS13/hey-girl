@@ -7,7 +7,8 @@ class EventList extends Component {
   constructor(props){
       super(props);
     this.state = {
-      events: []
+      events: [],
+      industry: ''
     }
   }
   async componentDidMount(){
@@ -20,8 +21,14 @@ async handleDelete(industryId, id){
   await deleteEvent(industryId, id);
 }
 
-// async setEvents(){
-//
+setIndustry(){
+  const industry = this.props.industryId;
+  this.setState({industry});
+}
+
+// async handleUpdate(industryId, eventId, data)
+// // async setEvents(){
+// //
 // }
     // ;
     // await addEvent(industryId, data);

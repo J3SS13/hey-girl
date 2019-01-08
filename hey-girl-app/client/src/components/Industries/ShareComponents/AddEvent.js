@@ -15,11 +15,30 @@ export default class Example extends React.Component {
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label for="exampleText">I have had a similar experience... </Label>
+          <Label for="exampleText">Text Area</Label>
           <Input type="textarea" name="text" id="exampleText" />
         </FormGroup>
         <Button>Submit</Button>
       </Form>
+      <FormGroup>
+               <Label for="exampleDatetime">Datetime</Label>
+               <Input
+                 type="datetime"
+                 name="datetime"
+                 id="exampleDatetime"
+                 placeholder="datetime placeholder"
+               />
+             </FormGroup>
+             <FormGroup>
+               <Label for="exampleDate">Date</Label>
+               <Input
+                 type="date"
+                 name="date"
+                 id="exampleDate"
+                 placeholder="date placeholder"
+               />
+             </FormGroup>
+
     );
   }
 }

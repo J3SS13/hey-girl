@@ -18,7 +18,15 @@ class App extends Component {
       super(props);
     this.state = {
       industries: [],
-      posts: []
+      currentUser: null,
+      formData: {
+        username: '',
+        password: ''
+      },
+      userView: '',
+      loggedIn: false,
+      token: null
+    };
     }
   }
 
