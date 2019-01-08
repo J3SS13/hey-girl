@@ -2,6 +2,7 @@ import axios from 'axios';
 
 //Get all events for specific Industry
 async function getEvents(industryId){
+  console.log(industryId)
   const resp = await axios({
     url: `/industries/${industryId}/events`
     });

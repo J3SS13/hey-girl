@@ -36,7 +36,7 @@ industries[1].posts.create(topic:'How do I continue to move up in my career, and
 industries[2].posts.create(topic:"I'm always mistaken for a nurse. I'm a brain surgeon", user_id: jess.id)
 industries[2].posts.create(topic:'My male coworkers undercut my knowledge by restating what I have already explained.', user_id: jess.id)
 industries[3].posts.create(topic:'Employers are worried to hire women. Is this because they are afraid of MeToo ', user_id: jess.id)
-industries[3].posts.create(topic:'How can I get more involved with other female filmmakes?', user_id: jess.id)
+industries[3].posts.create(topic:'How can I get more involved with other female filmmakers?', user_id: jess.id)
 
 Event.destroy_all
 industries[0].events.create(name: 'Comedy and Code',location: 'Los Angelos, LA', date: 'Mar 30, 2019',time: '6:00pm',)
@@ -44,12 +44,12 @@ industries[1].events.create(name: 'Women in Mechanical Engineering',location: 'L
 industries[2].events.create(name: 'Astro-physics',location: 'New York, NY', date: 'Jan 30, 2019',time: '4:00pm',)
 industries[3].events.create(name: 'Fireside Chat with Sofia Coppola on Directing',location: 'New York, NY', date: 'Feb 5, 2019',time: '1:00pm',)
 
-Comment.destroy_all
-
-comment1 = Post.create(body:'Start a dialog with your HR department. Try not to make it directly about your coworker.', user_name: 'n/a')
-comments = posts.comments
-comments << comment1
-comments.jess << comment1
+# Comment.destroy_all
+#
+# comment1 = Post.create(body:'Start a dialog with your HR department. Try not to make it directly about your coworker.', user_name: 'n/a')
+# comments = posts.comments
+# comments << comment1
+# comments.jess << comment1
 #
 #
 # posts[1].comment.create(body:'Start a dialog with your HR department. Try not to make it directly about your coworker.', user_name: 'n/a')

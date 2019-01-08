@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-
+import { getPosts, addPost, updatePost, deletePost } from '../../../components/services/posts';
 
 class MessageBoard extends Component {
 
@@ -13,9 +13,11 @@ class MessageBoard extends Component {
 
 
 async componentDidMount(){
-  const events = await getPosts(this.props.industryId);
-  this.setState({events})
+  const allPosts = await getPosts(this.props.industryId);
+  const posts = allPosts.filter(post =>post.industry_id === this.props.industryId)
+  this.setState({posts})
 }
+
 
 
 //   async deletePost(industryId, data){
@@ -32,8 +34,14 @@ async componentDidMount(){
 
 render(){
   return(
-    <div>
-      MessageBoard
+<div>
+  {this.state.posts.map(post => (
+          <div key={post.id}>
+          <h4> {post.topic} </h4>
+          <button> Delete </button> <button> Edit </button>
+          {post.comments.map(comments => (<div> {comments.body} <button> Delete </button> <button> Edit </button> </div>)) }
+          </div>
+      ))}
     </div>
   )}
 }

@@ -5,7 +5,6 @@ async function getIndustries(){
   const resp = await axios({
     url: '/industries'
     });
-  console.log(resp);
   return resp.data;
 }
 

@@ -11,11 +11,18 @@ class EventList extends Component {
     }
   }
   async componentDidMount(){
-    const events = await getEvents(this.props.industryId);
+    const allEvents = await getEvents(this.props.industryId);
+    const events = allEvents.filter(event => event.industry_id === this.props.industryId);
     this.setState({events})
   }
 
+async handleDelete(industryId, id){
+  await deleteEvent(industryId, id);
+}
 
+// async setEvents(){
+//
+// }
     // ;
     // await addEvent(industryId, data);
     // await deleteEvent(industryId, eventId);
@@ -25,9 +32,19 @@ class EventList extends Component {
 render(){
   return(
     <div>
-      Event List
+    {this.state.events.map(event => (
+            <div key={event.id}>
+            <h2> {event.name} </h2>
+            <h4> {event.date} - {event.time} </h4>
+            <h5> {event.location} </h5>
+            <button> Delete </button> <button> Edit </button>
+            </div>
+          ))}
     </div>
   )}
+
+
+
 }
 
 export default EventList;
