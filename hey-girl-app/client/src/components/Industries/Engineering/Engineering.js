@@ -1,13 +1,12 @@
 import React from 'react';
-import Post from './Post';
-import EventList from '../ShareComponents/EventList';
-import MessageBoard from '../ShareComponents/MessageBoard';
+import Events from '../SharedComponents/Events/Events';
+import MessageBoard from '../SharedComponents/MessageBoard';
 
 export default function Engineering(){
   return(
     <div>
       <h1> Engineering </h1>
-      <EventList industryId={10}/>
+      <Events industryId={10}/>
       <MessageBoard industryId={10}/>
     </div>
   )

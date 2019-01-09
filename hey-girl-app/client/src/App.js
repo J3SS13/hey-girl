@@ -11,6 +11,7 @@ import Science from './components/Industries/Science/Science';
 import Tech from './components/Industries/Tech/Tech';
 import Home from './components/Home/Home';
 import Nav from './components/Nav/Nav';
+import Industries from './components/Industries/Industries';
 
 class App extends Component {
 
@@ -26,15 +27,9 @@ class App extends Component {
       userView: '',
       loggedIn: false,
       token: null
-      // ,
-      // credentials: {
-      //         email: '',
-      //         password: ''
-      // }
 
     };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
 
@@ -43,25 +38,6 @@ async componentDidMount(){
   this.setState({industries});
 }
 
-
-  // handleChange(e){
-  //   const {name, value} = e.target
-  //   this.setState(prevState => (
-  //     {
-  //       credentials: {
-  //         ...prevState.credentials,
-  //         [name] : value
-  //       }
-  //     }
-  //     ))
-  //   }
-  //
-  // async handleSubmit(e){
-  //     e.preventDefault();
-  //     const tokenData = await login(this.state.credentials);
-  //     localStorage.setItem('token', tokenData.jwt);
-  //   }
-  //
 
 
   render() {
@@ -83,7 +59,8 @@ async componentDidMount(){
                 component={Tech} />
               <Route
                 path="/ent"
-                component={Entertainment} />
+                render={((props) => <Entertainment {...props} data={this.state.date}/> )} />
+
       </div>
     </Router>
     );

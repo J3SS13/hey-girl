@@ -10,21 +10,20 @@ async function getPosts(industryId){
 
 //Add post by Industry
 async function addPost(industryId, data){
-  const resp = await axios.post(`/industries/${industryId}/posts`, data);
+  const resp = await axios.post(`/industries/${industryId}/posts`, data,
+      {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}});
 }
 
 // Update post by Industry
 async function updatePost(industryId, postId, data){
-  const resp = await axios.put(`/industries/${industryId}/posts/${postId}`,
-    data
-    );
-  console.log(resp);
+  const resp = await axios.put(`/industries/${industryId}/posts`, data,
+      {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}});
   return resp.data;
 }
 
 //Delete post by Industry
 async function deletePost(industryId, postId){
-  const resp = await axios.delete(`/industries/${industryId}/posts/${postId}`);
+  const resp = await axios.delete(`/industries/${industryId}/posts/${postId}`,{headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}});
   return resp.data;
 }
 

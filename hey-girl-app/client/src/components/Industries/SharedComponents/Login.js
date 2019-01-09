@@ -38,7 +38,6 @@ class Login extends Component {
   render(){
       return(
         <div>
-          <h1> Choose Your Industry </h1>
           <LoginForm handleChange={this.handleChange}
                      handleSubmit={this.handleSubmit}
                      login={this.state.credentials}

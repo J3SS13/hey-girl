@@ -4,9 +4,9 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all
+    @industry = Industry.find(params[:industry_id])
 
-    render json: @events
+    render json: @industry.events
   end
 
   # GET /events/1
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     @industry = Industry.find(params[:industry_id])
     @event = Event.new(event_params)
     if @industry.events << @event
-      render json: @event, status: :created, location: @event
+      render json: @event, status: :created
     else
       render json: @event.errors, status: :unprocessable_entity
     end

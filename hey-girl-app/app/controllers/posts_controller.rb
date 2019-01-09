@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @industry = Industry.find(params[:industry_id])
 
-    render json: @posts, include: :comments
+    render json: @industry.posts, include: :comments
   end
 
   # GET /posts/1
