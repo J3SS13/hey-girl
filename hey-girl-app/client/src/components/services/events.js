@@ -18,7 +18,7 @@ async function addEvent(industryId, data){
 // Update event by Industry
 async function updateEvent(industryId, eventId, data){
   const resp = await axios.put(`/industries/${industryId}/events/${eventId}`,
-    data
+    data, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}}
     );
   console.log(resp);
   return resp.data;
