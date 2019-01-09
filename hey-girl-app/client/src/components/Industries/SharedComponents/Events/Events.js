@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { getEvents, addEvent, updateEvent, deleteEvent } from '../../../../components/services/events';
 import EventList from './EventList';
 import AddEventForm from './AddEventForm';
+import './events.css';
 
 class Events extends Component {
 
@@ -53,11 +54,6 @@ async handleDeleteEvent(e){
 }
 
 
-// setIndustry(){
-//   const industry = this.props.industryId;
-//   this.setState({industry});
-// }
-
 handleChange(e){
   const { name, value } = e.target
   this.setState({
@@ -69,7 +65,7 @@ handleChange(e){
 
 render(){
   return(
-    <div>
+    <div id="events">
    <EventList events={this.state.events}
               handleDeleteEvent={this.handleDeleteEvent}
               handleEditEvent={this.handleEditEvent}/>

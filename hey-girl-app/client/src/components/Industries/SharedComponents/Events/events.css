@@ -1,0 +1,32 @@
+.event-item{
+  border: 1px;
+  border-color: grey;
+  border-style: solid;
+  padding: 20px;
+  margin: 5px 50px;
+}
+
+#events {
+  max-width: 800px;
+  background-color: lightgrey;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* #form-container{
+  display: flex;
+}
+
+#form-container {
+ align-content: flex-start;
+}
+
+input {
+  flex: none;
+} */
+
+button {
+  margin: 10px;
+}

@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { getPosts, addPost, updatePost, deletePost } from '../../../../components/services/posts';
+import './posts.css';
 
 class MessageBoard extends Component {
 
@@ -33,9 +34,10 @@ async componentDidMount(){
 
 render(){
   return(
-<div>
+<div id="posts">
+  <h2> Forum </h2>
   {this.state.posts.map(post => (
-          <div key={post.id}>
+          <div key={post.id} className="post-item">
           <h4> {post.topic} </h4>
           <button> Delete </button> <button> Edit </button>
           {post.comments.map(comments => (<div> {comments.body} <button> Delete </button> <button> Edit </button> </div>)) }

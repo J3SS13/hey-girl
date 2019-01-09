@@ -11,8 +11,7 @@ import Science from './components/Industries/Science/Science';
 import Tech from './components/Industries/Tech/Tech';
 import Home from './components/Home/Home';
 import Nav from './components/Nav/Nav';
-import Industries from './components/Industries/Industries';
-
+import Login from './components/Industries/SharedComponents/Login/Login';
 class App extends Component {
 
   constructor(props){
@@ -49,6 +48,9 @@ async componentDidMount(){
               <Route
                 exact path="/"
                 component={Home}/>
+              <Route
+                path="/login"
+                component={Login} />
               <Route
                 path="/eng"
                 component={Engineering}/>

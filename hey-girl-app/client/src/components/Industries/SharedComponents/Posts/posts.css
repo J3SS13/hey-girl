@@ -1,0 +1,15 @@
+.post-item{
+  border: 1px;
+  border-color: grey;
+  border-style: solid;
+  padding: 20px;
+  margin: 5px 50px;
+}
+
+#posts {
+  max-width: 800px;
+  background-color: lightgrey;
+  margin: 50px;
+  padding: 20px;
+  margin: 0 auto;
+}
