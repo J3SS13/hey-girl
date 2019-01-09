@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { getPosts, addPost, updatePost, deletePost } from '../../../components/services/posts';
+import { getPosts, addPost, updatePost, deletePost } from '../../../../components/services/posts';
 
 class MessageBoard extends Component {
 
@@ -13,8 +13,7 @@ class MessageBoard extends Component {
 
 
 async componentDidMount(){
-  const allPosts = await getPosts(this.props.industryId);
-  const posts = allPosts.filter(post =>post.industry_id === this.props.industryId)
+  const posts = await getPosts(this.props.industryId);
   this.setState({posts})
 }
 

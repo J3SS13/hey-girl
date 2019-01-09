@@ -33,6 +33,7 @@ class App extends Component {
     }
 
 
+
 async componentDidMount(){
   const industries = await getIndustries();
   this.setState({industries});
@@ -59,8 +60,7 @@ async componentDidMount(){
                 component={Tech} />
               <Route
                 path="/ent"
-                render={((props) => <Entertainment {...props} data={this.state.date}/> )} />
-
+                render={((props) => <Entertainment {...props} date={this.state.date}/> )} />
       </div>
     </Router>
     );

@@ -18,21 +18,45 @@ class Events extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleAddEvent = this.handleAddEvent.bind(this);
-  }
-  async componentDidMount(){
-    const allEvents = await getEvents(this.props.industryId);
-    const events = allEvents.filter(event => event.industry_id === this.props.industryId);
-    this.setState({events})
+    this.handleDeleteEvent = this.handleDeleteEvent.bind(this);
   }
 
-async handleDelete(industryId, id){
-  await deleteEvent(industryId, id);
+
+
+componentDidMount(){
+  this.handleGetEvents();
+  }
+
+async handleGetEvents(){
+  const events = await getEvents(this.props.industryId);
+  this.setState({events})
 }
 
-setIndustry(){
-  const industry = this.props.industryId;
-  this.setState({industry});
+async handleAddEvent(e){
+  e.preventDefault();
+  const data = {event: this.state}
+  await addEvent(this.props.industryId, data)
+  await this.handleGetEvents();
 }
+
+//I need to save event selected in state.
+async handleEditEvent(e){
+  e.preventDefault();
+  const data = {event:this.state}
+    await updateEvent(this.props.industryId, this.state.event.id, data);
+    await this.handleGetEvents();
+}
+
+async handleDeleteEvent(){
+  await deleteEvent(this.props.industryId, this.state.event.id);
+  await this.handleGetEvents();
+}
+
+
+// setIndustry(){
+//   const industry = this.props.industryId;
+//   this.setState({industry});
+// }
 
 handleChange(e){
   const { name, value } = e.target
@@ -41,27 +65,14 @@ handleChange(e){
   });
 }
 
-async handleAddEvent(e){
-  e.preventDefault();
-  const data = {event: this.state}
-  await addEvent(this.props.industryId, data)
-}
-
-
-// async handleUpdate(industryId, eventId, data)
-// // async setEvents(){
-// //
-// }
-    // ;
-    // await addEvent(industryId, data);
-    // await deleteEvent(industryId, eventId);
-    // await updateEvent(industryId, eventId, data);
 
 
 render(){
   return(
     <div>
-   <EventList events={this.state.events}/>
+   <EventList events={this.state.events}
+              handleDeleteEvent={this.handleDeleteEvent}
+              handleEditEvent={this.handleEditEvent}/>
    <AddEventForm
           handleAddEvent={this.handleAddEvent}
           handleChange={this.handleChange}

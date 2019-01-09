@@ -1,6 +1,6 @@
 import React from 'react';
 import Events from '../SharedComponents/Events/Events';
-import MessageBoard from '../SharedComponents/MessageBoard';
+import MessageBoard from '../SharedComponents/Posts/MessageBoard';
 
 export default function Science(){
   return(

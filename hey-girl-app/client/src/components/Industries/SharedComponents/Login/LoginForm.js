@@ -15,4 +15,4 @@ export default function LoginForm(props){
       <button type="submit">Login</button>
     </form>
   )
-}
+};

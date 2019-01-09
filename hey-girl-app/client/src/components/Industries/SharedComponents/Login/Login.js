@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { login }from '../../../../components/services/auth';
 import LoginForm from './LoginForm';
-import { login }from '../../../components/services/auth';
 
 class Login extends Component {
 

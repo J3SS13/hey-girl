@@ -1,7 +1,7 @@
 import React from 'react';
 import Links from './Links';
 import { Link } from 'react-router-dom';
-import Login from '../Industries/SharedComponents/Login';
+import Login from '../Industries/SharedComponents/Login/Login';
 
 export default function Nav(props){
   return(
