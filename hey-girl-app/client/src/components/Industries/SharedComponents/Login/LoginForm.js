@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function LoginForm(props){
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={props.handleSubmit} className="login-form">
         <h2>Login</h2>
         <label>Email: </label>
       <input onChange={props.handleChange}

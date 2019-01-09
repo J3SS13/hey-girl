@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { login }from '../../../../components/services/auth';
 import LoginForm from './LoginForm';
+import './login.css';
 
 class Login extends Component {
 
