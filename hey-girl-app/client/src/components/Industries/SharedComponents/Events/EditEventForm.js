@@ -4,7 +4,7 @@ export default function EditEventForm(props){
   return(
 
   <div id="form-comtainer">
-    <form onSubmit={props.handleEditEvent} id="event-form">
+    <form onSubmit={props.handleUpdate} id="event-form">
     <h4> Edit Event </h4>
     <label> Name: </label>
       <input type='text'

@@ -12,17 +12,19 @@ class Events extends Component {
       super(props);
     this.state = {
       events: [],
-    industry: '',
         name: '',
         location: '',
         time: '',
         date: '',
-        view: ''
+        view: '',
+        key:'',
+        selected:''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleAddEvent = this.handleAddEvent.bind(this);
     this.handleDeleteEvent = this.handleDeleteEvent.bind(this);
-    this.handleEditEvent = this.handleEditEvent.bind(this);
+    this.editEvent = this.editEvent.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
 
@@ -45,19 +47,24 @@ async handleAddEvent(e){
 }
 
 //I need to save event selected in state.
-async handleEditEvent(e){
-  const data = {event: this.state}
-    await updateEvent(this.props.industryId, event_id, data);
-
-
+async editEvent(event){
+  this.setState({
+    name: event.name,
+    location: event.location,
+    date: event.date,
+    time: event.time,
+    key: event.id
+  })
+  this.setViewEdit();
 }
 
 async handleUpdate(e){
   e.preventDefault();
-
-  this.setViewEdit();
+  const eventId = this.state.key
+  const data = {event: this.state}
+  await updateEvent(this.props.industryId, eventId, data);
   this.resetForm();
-
+  this.resetView();
   await this.handleGetEvents();
 }
 
@@ -97,7 +104,7 @@ render(){
     <div id="events">
    <EventList events={this.state.events}
               handleDeleteEvent={this.handleDeleteEvent}
-              handleEditEvent={this.handleEditEvent}/>
+              onEdit={this.editEvent}/>
 
     { !this.state.view
         ?
@@ -112,7 +119,7 @@ render(){
       :
       <EditEventForm
 
-             handleEditEvent={this.handleEditEvent}
+             handleUpdate={this.handleUpdate}
              handleChange={this.handleChange}
              name={this.state.name}
              location={this.state.location}

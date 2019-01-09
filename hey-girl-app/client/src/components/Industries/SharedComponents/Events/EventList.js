@@ -14,9 +14,13 @@ export default function EventList(props){
           date={event.date}
           time={event.time}
           location={event.location}
+          event={event}
           handleDeleteEvent={props.handleDeleteEvent}
-          handleEditEvent={() => props.handleEditEvent(event.id)}
-        />
+          onEdit={(e) => {
+                e.stopPropagation();
+                props.onEdit(event)
+              }}
+          />
           ))}
     </div>
   )
