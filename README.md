@@ -6,7 +6,7 @@
 + Event board for women to network in their specific industry.
 + To Create, Delete or Update an event, the user must be logged in
 
-### Features List:
+#### Features List:
 + See events and existing forum posts
 + Login to existing account
 + Logged in user can create event
