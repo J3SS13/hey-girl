@@ -43,7 +43,7 @@ async handleAddEvent(e){
 async handleEditEvent(e){
   e.preventDefault();
   const data = {event:this.state}
-    await updateEvent(this.props.industryId, this.state.event.id, data);
+    await updateEvent(this.props.industryId, e.currentTarget.id, data);
     await this.handleGetEvents();
 }
 

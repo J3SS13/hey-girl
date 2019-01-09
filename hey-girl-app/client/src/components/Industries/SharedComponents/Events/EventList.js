@@ -14,6 +14,7 @@ export default function EventList(props){
           time={event.time}
           location={event.location}
           handleDeleteEvent={props.handleDeleteEvent}
+          handleEditEvent={props.handleDeleteEvent}
         />
           ))}
     </div>
