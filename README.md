@@ -33,7 +33,7 @@ gem:
 + rack-cors
 
 ### ERD
-![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/erd.jpg)
+![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/erd.jpeg)
 
 
 ### Collaborate
