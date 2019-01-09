@@ -1,15 +1,20 @@
 import React from 'react';
+import ListItem from './ListItem';
 
 export default function EventList(props){
   return(
     <div>
     {props.events.map(event => (
-            <div key={event.id}>
-            <h2> {event.name} </h2>
-            <h4> {event.date} - {event.time} </h4>
-            <h5> {event.location} </h5>
-            <button> Delete </button> <button> Edit </button>
-            </div>
+
+        <ListItem
+          key={event.id}
+          name={event.name}
+          id={event.id}
+          date={event.date}
+          time={event.time}
+          location={event.location}
+          handleDeleteEvent={props.handleDeleteEvent}
+        />
           ))}
     </div>
   )

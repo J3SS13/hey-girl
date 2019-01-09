@@ -47,8 +47,8 @@ async handleEditEvent(e){
     await this.handleGetEvents();
 }
 
-async handleDeleteEvent(){
-  await deleteEvent(this.props.industryId, this.state.event.id);
+async handleDeleteEvent(e){
+  await deleteEvent(this.props.industryId, e.currentTarget.id);
   await this.handleGetEvents();
 }
 
