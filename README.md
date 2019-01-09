@@ -2,15 +2,39 @@
 ## “Connecting women in professions where they are under represented. “
 
 ### MVP
-Message board for women to talk about issues they face in the workplace. Event board for networking and social events.  Not industry specific. Event and message board will have a filter button.
 
-![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/app1.jpg)
++ Event board for women to network in their specific industry.
++ To Create, Delete or Update an event, the user must be logged in
 
-![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/app2.jpg)
+### Features List:
++ See events and existing forum posts
++ Login to existing account
++ Logged in user can create event
++ Logged in user can update event
++ Logged in user can delete event
++ Events and forums posts separated by industry.
 
 ### Post-MVP
-Users can plan projects and join projects planned by others. Users can add other users to their “Girl Gang”.  Different sections of app for each industry (film, tech, music, etc.)
-![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/post-mvp.jpg)
++ Message board for women to talk about issues they face in the workplace.
++ Users can plan projects and join projects planned by others.
++ Users can add other users to their “Girl Gang”.  
 
-### Timeline
-Friday - Start backend
+### Dependancies & Technologies
+This app uses a React.js using React Router on the front end and Ruby on Rails with Active Record on the backend.
+
+npm:
++ axios
++ bcrypt
++ react-router-dom
+
+gem:
++ jwt
++ knock
++ rack-cors
+
+### ERD
+![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/erd.jpg)
+
+
+### Collaborate
++ Fork and clone repo
