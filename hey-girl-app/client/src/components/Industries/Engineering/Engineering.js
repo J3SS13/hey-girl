@@ -6,7 +6,7 @@ export default function Engineering(){
   return(
     <div>
       <h1 className="industry-name"> Engineering </h1>
-      <Events industryId={10}/>
+      <Events industryId={2}/>
     </div>
   )
 }

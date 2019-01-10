@@ -7,7 +7,7 @@ export default function Science(){
   return(
     <div>
       <h1 className="industry-name"> Science </h1>
-      <Events industryId={11}/>
+      <Events industryId={3}/>
     </div>
   )
 }
