@@ -1,31 +1,42 @@
-#home{
-  font-size: 30px;
+h6{
+  margin: 0 0 60px 0;
+  font-size: 20px;
   font-family: 'Noto Sans KR', sans-serif;
   color: rgba(255,255,255,0.6);
-  padding:0;
 }
-#links {
+
+#home-container {
+
+}
+
+#link-container {
   font-size: 15px;
   font-family: 'Noto Sans KR', sans-serif;
   margin: 0 auto;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  max-width: 820px;
+  justify-content: center;
+
 }
 
 .home-links{
   align-self: flex-start;
   background-color: #68B1A6;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   margin: 0 auto;
   margin-bottom: 10px;
-
+  font-size: 30px;
 }
 
 .link{
   text-align: center;
   vertical-align: middle;
   margin: 0 auto;
+  color: #F29C96;
+  left: 50%;
+  top: 50%;
+  text-decoration: none;
+  font-family: 'Anton', sans-serif;
 }

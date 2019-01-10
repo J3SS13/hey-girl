@@ -7,7 +7,6 @@ export default function Engineering(){
     <div>
       <h1 className="industry-name"> Engineering </h1>
       <Events industryId={10}/>
-      <MessageBoard industryId={10}/>
     </div>
   )
 }

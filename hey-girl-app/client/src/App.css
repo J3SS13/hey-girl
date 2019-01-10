@@ -7,15 +7,18 @@ body {
   text-align: center;
 }
 
+h1 {
+  color: #F29C96;
+  font-family: 'Noto Sans KR', sans-serif;
+}
 .industry-name{
   margin: 100px 0 20px 0;
-  color: #F29C96;
-  font-family: 'Anton', sans-serif;
 }
 
 #title-logo{
   font-family: 'Shrikhand', cursive;
-  font-size: 100px;
+  font-size: 70px;
   color: white;
-  margin-top: 100px;
+  margin-top: 30px;
+  margin-right: 5px;
 }

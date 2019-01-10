@@ -7,7 +7,6 @@ export default function Entertainment(){
     <div>
       <h1 className="industry-name"> Entertainment </h1>
       <Events industryId={12}/>
-      <MessageBoard industryId={12}/>
     </div>
   )
 }
