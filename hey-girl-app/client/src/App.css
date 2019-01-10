@@ -9,6 +9,8 @@ body {
 
 .industry-name{
   margin: 100px 0 20px 0;
+  color: #F29C96;
+  font-family: 'Anton', sans-serif;
 }
 
 #title-logo{

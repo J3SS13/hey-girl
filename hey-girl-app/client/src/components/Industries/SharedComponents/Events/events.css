@@ -15,6 +15,8 @@
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
+  color: #68B1A6;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .event-forms{
@@ -27,14 +29,7 @@
   margin: 70px;
   opacity: 60%;
 }
-/* #form-container{
-  display: flex;
-}
 
-#form-container {
- align-content: flex-start;
-}
-*/
 
 submit-button{
   background-color: #EFBFA8;
@@ -42,5 +37,4 @@ submit-button{
 
 button {
   margin: 10px;
-
 }
