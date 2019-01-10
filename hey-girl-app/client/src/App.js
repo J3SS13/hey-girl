@@ -44,7 +44,12 @@ async componentDidMount(){
     return (
     <Router>
       <div className="App">
+
           <Nav />
+
+          <div id="title-logo"> Hey Girl
+          </div>
+
               <Route
                 exact path="/"
                 component={Home}/>

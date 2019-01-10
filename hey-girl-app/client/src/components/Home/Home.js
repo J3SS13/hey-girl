@@ -8,9 +8,25 @@ import './home.css';
 export default function Home(props){
   return(
     <div id="home">
-      <h4> Choose Your Industry </h4>
-      <Links />
-      <Link to='login'> Login </Link>
+    <h6> "Helping connect women in underrepresented industries." </h6>
+
+    <div id="links">
+      <div className="home-links">
+      <Link to='Eng' className="link"> Engineering </Link>
+      </div>
+
+      <div className="home-links">
+      <Link to='Science' className="link"> Science </Link>
+      </div>
+
+      <div className="home-links">
+      <Link to='Tech' className="link"> Technology </Link>
+      </div>
+
+      <div className="home-links">
+      <Link to='Ent' className="link"> Entertainment </Link>
+      </div>
+    </div>
     </div>
   )
 }

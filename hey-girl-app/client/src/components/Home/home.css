@@ -1,4 +1,31 @@
-#home {
+#home{
+  font-size: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: rgba(255,255,255,0.6);
+  padding:0;
+}
+#links {
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 820px;
+}
+
+.home-links{
+  align-self: flex-start;
+  background-color: #68B1A6;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+}
+
+.link{
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
 }

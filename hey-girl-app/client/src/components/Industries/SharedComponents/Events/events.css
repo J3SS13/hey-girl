@@ -1,20 +1,32 @@
 .event-item{
   border: 1px;
-  border-color: grey;
-  border-style: solid;
-  padding: 20px;
-  margin: 5px 50px;
+
+  border-radius: 20px;
+  background-color: rgba(255,255,255,.4);
+  padding: 30px;
+  margin: 10px 50px;
 }
 
 #events {
   max-width: 800px;
-  background-color: lightgrey;
+  background-color: rgba(255,255,255,.4);
+  border-radius: 20px;
   padding: 20px;
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
+.event-forms{
+  border: 1px;
+  border-color: rgba(255,255,255,.2);
+  border-style: solid;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,.2);
+  padding: 30px;
+  margin: 70px;
+  opacity: 60%;
+}
 /* #form-container{
   display: flex;
 }
@@ -22,11 +34,13 @@
 #form-container {
  align-content: flex-start;
 }
+*/
 
-input {
-  flex: none;
-} */
+submit-button{
+  background-color: #EFBFA8;
+}
 
 button {
   margin: 10px;
+
 }

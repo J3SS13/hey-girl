@@ -6,3 +6,14 @@ body {
 .App {
   text-align: center;
 }
+
+.industry-name{
+  margin: 100px 0 20px 0;
+}
+
+#title-logo{
+  font-family: 'Shrikhand', cursive;
+  font-size: 100px;
+  color: white;
+  margin-top: 100px;
+}

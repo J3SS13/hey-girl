@@ -3,8 +3,8 @@ import React from 'react';
 export default function AddEventForm(props){
   return(
 
-  <div id="form-comtainer">
-    <form onSubmit={props.handleAddEvent} id="event-form">
+  <div id="form-comtainer" className="event-forms">
+    <form onSubmit={props.handleAddEvent}>
     <h4> Create Event </h4>
     <label> Name: </label>
       <input type='text'
@@ -35,7 +35,7 @@ export default function AddEventForm(props){
               onChange={props.handleChange} />
 
 
-          <button> Submit </button>
+          <button className="submit-button"> Submit </button>
     </form>
   </div>
 

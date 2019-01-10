@@ -3,7 +3,7 @@ import React from 'react';
 export default function EditEventForm(props){
   return(
 
-  <div id="form-comtainer">
+  <div id="form-container" className="event-forms">
     <form onSubmit={props.handleUpdate} id="event-form">
     <h4> Edit Event </h4>
     <label> Name: </label>
@@ -35,7 +35,7 @@ export default function EditEventForm(props){
               onChange={props.handleChange} />
 
 
-          <button > Submit </button>
+          <button className="submit-button"> Submit </button>
     </form>
   </div>
 

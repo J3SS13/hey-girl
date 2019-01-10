@@ -7,13 +7,36 @@ import './nav.css';
 export default function Nav(props){
   return(
     <nav>
-    <Links />
-    <ul>
-      <li>
-      <Link to='/'> Home </Link>
-      <Link to='login'> Login </Link>
-      </li>
-    </ul>
+      <div id="nav">
+
+        <div id="logo-icon">
+
+        </div>
+
+
+      <div className="nav-links">
+        <Link to='/'> Home </Link>
+      </div>
+        <div className="nav-links">
+        <Link to='Eng'> Engineering </Link>
+        </div>
+
+        <div className="nav-links">
+        <Link to='Science'> Science </Link>
+        </div>
+
+        <div className="nav-links">
+        <Link to='Tech'> Technology </Link>
+        </div>
+
+        <div className="nav-links">
+        <Link to='Ent'> Entertainment </Link>
+        </div>
+
+        <div className="nav-links">
+          <Link to='login'> Login </Link>
+        </div>
+      </div>
     </nav>
   )
 }

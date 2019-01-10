@@ -5,7 +5,7 @@ import MessageBoard from '../SharedComponents/Posts/MessageBoard';
 export default function Science(){
   return(
     <div>
-      <h1> Science </h1>
+      <h1 className="industry-name"> Science </h1>
       <Events industryId={11}/>
       <MessageBoard industryId={11}/>
 
