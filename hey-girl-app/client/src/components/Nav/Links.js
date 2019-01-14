@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './nav.css';
 
 export default function Button(props){
   return(
     <ul id="nav">
       <li className="nav-links">
-      <Link to='Eng'> Engineering </Link>
+      <Link to='Engineering' style={{ textDecoration: 'none', color: 'white'}}> Engineering </Link>
       </li>
       <li className="nav-links">
-      <Link to='Science'> Science </Link>
+      <Link to='Science' style={{ textDecoration: 'none', color: 'white'}}> Science </Link>
       </li>
       <li className="nav-links">
-      <Link to='Tech'> Technology </Link>
+      <Link to='Technology' style={{ textDecoration: 'none', color: 'white'}}> Technology </Link>
       </li>
       <li className="nav-links">
-      <Link to='Ent'> Entertainment </Link>
+      <Link to='Entertainment' style={{ textDecoration: 'none', color: 'white'}}> Entertainment </Link>
       </li>
     </ul>
   )

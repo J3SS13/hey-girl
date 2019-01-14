@@ -13,29 +13,16 @@ export default function Nav(props){
 
         </div>
 
-
-      <div className="nav-links">
-        <Link to='/' style={{ textDecoration: 'none', color: 'white'}}> Home </Link>
-      </div>
         <div className="nav-links">
-        <Link to='Eng' style={{ textDecoration: 'none', color: 'white'}}> Engineering </Link>
+          <Link to='/' style={{ textDecoration: 'none', color: 'white'}}> Home </Link>
         </div>
 
-        <div className="nav-links">
-        <Link to='Science' style={{ textDecoration: 'none', color: 'white'}}> Science </Link>
-        </div>
-
-        <div className="nav-links">
-        <Link to='Tech' style={{ textDecoration: 'none', color: 'white'}}> Technology </Link>
-        </div>
-
-        <div className="nav-links">
-        <Link to='Ent' style={{ textDecoration: 'none', color: 'white'}}> Entertainment </Link>
-        </div>
+        <Links />
 
         <div className="nav-links">
           <Link to='login' style={{ textDecoration: 'none', color: 'white'}}> Login </Link>
         </div>
+
       </div>
     </nav>
   )

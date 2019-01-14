@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { getPosts, addPost, updatePost, deletePost } from '../../../../components/services/posts';
+import PostList from './PostList';
 import './posts.css';
 
 class MessageBoard extends Component {
@@ -8,42 +9,96 @@ class MessageBoard extends Component {
   constructor(props){
       super(props);
     this.state = {
-      posts: []
+      posts: [],
+      topic: '',
+      body: '',
+      view:'',
+      key:'',
+      selected:''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleAddPost = this.handleAddPost.bind(this);
+    this.handleDeletePost = this.handleDeletePost.bind(this);
+    this.editPost = this.editPost.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+
+  componentDidMount(){
+    this.handleGetPosts();
+    }
+
+  async handleGetPosts(){
+    const posts = await getPosts(this.props.industryId);
+    this.setState({posts})
+  }
+
+  async handleAddPost(e){
+    e.preventDefault();
+    const data = {post: this.state}
+    await addPost(this.props.industryId, data)
+    this.resetForm();
+    await this.handleGetPosts();
+  }
+
+  //I need to save post selected in state.
+  async editPost(post){
+    this.setState({
+      topic: post.topic,
+      body: post.body,
+      key: post.id
+    })
+    this.setViewEdit();
+  }
+
+  async handleUpdate(e){
+    e.preventDefault();
+    const postId = this.state.key
+    const data = {post: this.state}
+    await updatePost(this.props.industryId, postId, data);
+    this.resetForm();
+    this.resetView();
+    await this.handleGetPosts();
   }
 
 
-async componentDidMount(){
-  const posts = await getPosts(this.props.industryId);
-  this.setState({posts})
-}
+  async handleDeletePost(e){
+    await deletePost(this.props.industryId, e.currentTarget.id);
+    await this.handleGetPosts();
+  }
+
+  handleChange(e){
+    const { name, value } = e.target
+    this.setState({
+      [name]: value
+    });
+  }
+
+  resetView(){
+    this.setState({view:''})
+  }
+
+  setViewEdit(){
+    this.setState({view: 'edit'})
+  }
+
+  resetForm(){
+    this.setState({
+        name: '',
+        location: '',
+        time: '',
+        date: ''
+    })
+  }
 
 
 
-//   async deletePost(industryId, data){
-//     await addPost(industryId, data);
-//   }
-//
-//   async updatePost(industryId, eventId, data){
-//     await updatePost(industryId, eventId, data);
-//   }
-//
-//   async deletePost(industryId, eventId){
-//     await deletePost(industryId, eventId);
-//   }
+
 
 render(){
   return(
-<div id="posts">
-  <h2> Forum </h2>
-  {this.state.posts.map(post => (
-          <div key={post.id} className="post-item">
-          <h4> {post.topic} </h4>
-          <button> Delete </button> <button> Edit </button>
-          {post.comments.map(comments => (<div> {comments.body} <button> Delete </button> <button> Edit </button> </div>)) }
-          </div>
-      ))}
-    </div>
+    <PostList posts={this.state.posts}
+              handleDeletePost={this.handleDeletePost}
+              onEdit={this.state.editPost}/>
   )}
 }
 

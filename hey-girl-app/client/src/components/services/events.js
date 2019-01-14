@@ -12,7 +12,8 @@ async function getEvents(industryId){
 
 //Add event by Industry
 async function addEvent(industryId, data){
-  const resp = await axios.post(`/industries/${industryId}/events`, data, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}} );
+  const resp = await axios.post(`/industries/${industryId}/events`,
+    data, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}} );
 }
 
 // Update event by Industry
@@ -26,7 +27,8 @@ async function updateEvent(industryId, eventId, data){
 
 //Delete event by Industry
 async function deleteEvent(industryId, eventId){
-  const resp = await axios.delete(`/industries/${industryId}/events/${eventId}`, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}});
+  const resp = await axios.delete(`/industries/${industryId}/events/${eventId}`,
+    {headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}});
   return resp.data;
 }
 

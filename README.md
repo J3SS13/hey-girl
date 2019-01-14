@@ -21,6 +21,8 @@
 + Users can plan projects and join projects planned by others.
 + Users can add other users to their “Girl Gang”.  
 
+#### Post MVP Wireframes
+![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/post-mvp.jpg)
 
 ### ERD
 ![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/erd.jpeg)
@@ -38,5 +40,7 @@ gem:
 + knock
 + rack-cors
 
+### Code Snippet
+![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/snippet.png)
 ### Collaborate
 + Fork and clone repo

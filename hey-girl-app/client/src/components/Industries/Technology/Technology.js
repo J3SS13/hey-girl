@@ -3,11 +3,11 @@ import Events from '../SharedComponents/Events/Events';
 import MessageBoard from '../SharedComponents/Posts/MessageBoard';
 
 
-export default function Tech(){
+export default function Technology(props){
   return(
     <div>
-      <h1 className="industry-name"> Technology </h1>
-      <Events industryId={1}/>
+      <h1 className="industry-name"> {props.industry.name} </h1>
+      <Events industryId={props.industry.id}/>
     </div>
   )
 }
