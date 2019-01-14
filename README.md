@@ -41,7 +41,7 @@ gem:
 + rack-cors
 
 ### Code Snippet
-Abstracted out e"vents" and "posts" axios calls into their own service file.
+Abstracted out "events" and "posts" axios calls into their own service files.
 
 ![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/snippet.png)
 
