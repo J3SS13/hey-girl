@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { getIndustries } from './components/services/industries';
-
-import Engineering from './components/Industries/Engineering/Engineering';
-import Entertainment from './components/Industries/Entertainment/Entertainment';
-import Science from './components/Industries/Science/Science';
-import Technology from './components/Industries/Technology/Technology';
+//
+// import Engineering from './components/Industries/Engineering/Engineering';
+// import Entertainment from './components/Industries/Entertainment/Entertainment';
+// import Science from './components/Industries/Science/Science';
+// import Technology from './components/Industries/Technology/Technology';
 import Home from './components/Home/Home';
 import Nav from './components/Nav/Nav';
 import Login from './components/Industries/SharedComponents/Login/Login';
+import IndustryView from './components/Industries/IndustryView';
 class App extends Component {
 
   constructor(props){
@@ -46,18 +47,16 @@ async componentDidMount(){
           <Route
             exact path="/"
             render={((props) => <Home {...props} industries={this.state.industries}/> )}
-            />
+          />
 
             <Route
               path="/login"
               component={Login} />
 
-          {this.state.industries.map(industry => (
             <Route
-              path= {'/' + industry}
-              render={((props) => <industry {...props} key={industry.id} industry={industry} industries={this.state.industries}/> )} />
-          ))}
-
+              path="/industry/:industryname"
+              component={((props) => <IndustryView {...props} industries={this.state.industries}/> )}
+            />
       </div>
     </Router>
     );
