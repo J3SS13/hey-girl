@@ -41,6 +41,8 @@ gem:
 + rack-cors
 
 ### Code Snippet
+Abstracted out my axios calls into a service file, for events and posts.
 ![alt text](https://github.com/J3SS13/hey-girl/blob/master/readme-resources/snippet.png)
+
 ### Collaborate
 + Fork and clone repo
